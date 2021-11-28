@@ -1,0 +1,35 @@
+:root {
+    --primary-color: brown;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    text-align: center;
+    
+}
+
+div {
+    border: 1px solid black;
+    width: 50%;
+    height: 10rem;
+    margin: auto;
+    
+}
+
+textarea {
+    width: 50%;
+    height: 10rem;
+    margin: 1rem;
+}
+
+button {
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem ;
+}
