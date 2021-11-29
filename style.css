@@ -47,9 +47,10 @@ button {
 }
 
 footer {
-    background-color: var(--primary-color);
+    background-color: rgba(var(--primary-color));
     padding: 2rem;
     text-align: center;
+    color: white;
 }
 
 #groot {
