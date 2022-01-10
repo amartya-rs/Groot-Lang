@@ -1,34 +1,27 @@
-var textArea = document.querySelector("#ta-input");
-var button = document.querySelector("#button");
-var output = document.querySelector("#div-output");
+const textArea = document.querySelector("#ta-input");
+const button = document.querySelector("#button");
+const output = document.querySelector("#div-output");
 
-button.addEventListener("click", clickEventHandler);
+const url = "https://api.funtranslations.com/translate/groot.json";
 
-
-
-var url = "https://api.funtranslations.com/translate/groot.json";
+let serverUrl = text => `${url}?text=${text}`;
 
 
-function serverUrl (text) {
-    return url + "?" + "text=" + text
-}
-
-
-function clickEventHandler() {
-    var textInput = textArea.value;
+let clickEventHandler= () => {
+    const textInput = textArea.value;
 
     fetch(serverUrl(textInput))
     .then(response => response.json())
     .then(json => {
-        var tText = json.contents.translated;
+        const tText = json.contents.translated;
         output.innerText = tText;
     })
     .catch(errorHandler)
-    
-    
 }
 
+button.addEventListener("click", clickEventHandler);
+
 //error handling
-function errorHandler(){
+let errorHandler = () => {
     alert("Something wrong with the server. Try after sometime.")
 };
